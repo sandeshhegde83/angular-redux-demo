@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/css/bootstrap.css">
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+  </head>
+  <body>
+  <h2>Bouncing-Back the state <i>using Redux</i></h2>
+    <div ng-controller="IndexController as indexController" class="container-box angular">
+      <div>
+        <label class="label-font-size">Enter the tasks here :</label>
+        <input type="text" ng-model="indexController.task" />
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <button href="#" ng-click="indexController.add()">Add task</button>
+        <br />
+        <label class="label-font-size">Bouncing the state from Store :</label>
+        <input type="text" ng-model="indexController.taskFromStore" />
+      </div>
+    </div>
+  </body>
+  <script src="/bundle.js"></script>
+</html>

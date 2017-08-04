@@ -1,0 +1,32 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
+.container-box.react{
+    margin: 20px 20px;
+    border-color: #2196F3!important;
+    border-left: 6px solid;
+    background-color: #ddf1ff;
+    max-width: 70%;
+}
+
+.container-box.angular{
+    margin: 20px 20px;
+    border-color: #2196F3!important;
+    border-left: 6px solid;
+    background-color: #ffdddd;
+    max-width: 70%;
+}
+
+.margin-left{
+  margin-left:50px;
+}
+
+.header-font{
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+.label-font-size{
+    font-size: 14px;
+}
