@@ -5,9 +5,6 @@ export default class IndexController{
     this.reduxService = reduxService;
     this.task = '';
     let mapStateToThis = (state) => {
-      console.log('Printing state in mapStateToThis');
-      console.log(state);
-      console.log(state.todos.length);
       if(!state.todos.length) {
         return;
       }
@@ -23,7 +20,6 @@ export default class IndexController{
   add() {
     let task = this.task;
     this.addTodo(task); //Fire Action Creator
-    //this.task = '';
     console.log(this.reduxService.getState());
   }
 }
