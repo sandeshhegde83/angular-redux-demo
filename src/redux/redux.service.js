@@ -1,10 +1,13 @@
-import Connector from './connector';
-import configureReducers from './configureReducers';
-import {createStore, applyMiddleware, compose} from 'redux';
-import digestMiddleware from './digestMiddleware';
-import hydrateStore from './hydrateStore';
 
-export default function reduxServiceProvider() {
+let createStore = require('redux').createStore;
+let applyMiddleware = require('redux').applyMiddleware;
+let compose = require('redux').compose;
+let configureReducers = require('./configureReducers');
+let Connector = require('./connector');
+let hydrateStore = require('./hydrateStore');
+let digestMiddleware = require('./digestMiddleware');
+
+function reduxServiceProvider() {
   let _reducer = undefined;
   let _middlewares = undefined;
   let _storeEnhancers = undefined;
@@ -55,3 +58,5 @@ export default function reduxServiceProvider() {
 
   this.$get.$inject = ['$injector'];
 }
+
+module.exports = reduxServiceProvider;

@@ -1,5 +1,7 @@
-import reduxServiceProvider from './redux.service';
+let reduxServiceProvider = require('./redux.service');
 
-export default angular.module('reduxService', [])
+let serviceModule =  angular.module('reduxService', [])
   .provider('reduxService' , reduxServiceProvider)
   .name;
+
+module.exports = serviceModule;

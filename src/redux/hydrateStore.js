@@ -1,4 +1,4 @@
-export default function hydrateStore(store , $sessionStorage) {
+function hydrateStore(store , $sessionStorage) {
   return (actionType, key) => {
     store.dispatch(
     {
@@ -7,3 +7,5 @@ export default function hydrateStore(store , $sessionStorage) {
     });
   }
 }
+
+module.exports = hydrateStore;

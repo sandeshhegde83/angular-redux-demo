@@ -1,4 +1,4 @@
-export default function digestMiddleware($rootScope) {
+function digestMiddleware($rootScope) {
   return store => next => action => {
     if(!$rootScope.$$phase) {
       $rootScope.$apply(next(action));
@@ -7,4 +7,6 @@ export default function digestMiddleware($rootScope) {
     }
   };
 }
+
+module.exports = digestMiddleware;
 

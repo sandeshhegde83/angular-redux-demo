@@ -1,13 +1,9 @@
-//import shallowEqual from './utils/shallowEquals';
-import wrapActionCreators from './utils/wrapActionCreators';
-
-//Alternative should be researched..
-//import isPlainObject from 'lodash.isplainobject';
+const wrapActionCreators = require('./utils/wrapActionCreators');
 
 const defaultMapStateToTarget = () => ({});
 const defaultMapDispatchToTarget = dispatch => ({dispatch});
 
-export default function Connector(store) {
+function Connector(store) {
   return (mapStateToTarget, mapDispatchToTarget) => {
     const finalMapStateToTarget = mapStateToTarget || defaultMapStateToTarget;
     const finalMapDispatchToTarget = isPlainObject(mapDispatchToTarget) ?
@@ -50,4 +46,6 @@ function isFunction(target) {
 function isPlainObject(o) {
   return typeof o == 'object' && o.constructor == Object;
 }
+
+module.exports = Connector;
 

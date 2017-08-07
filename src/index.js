@@ -3,21 +3,15 @@ import angular from 'angular';
 import 'ngStorage';
 import IndexController from './controllers/IndexController';
 
-/*reduxService is a redux wrapper I created similar to react-redux
-  It has the capability to add reducers asynchronously ro the store
-  thus supporting webpack code split
- */
-import reduxService from './redux';
-
 //REDUX-RELATED IMPORTS
+//import reduxService from './redux';
 import thunk from 'redux-thunk';
-import createLogger from 'redux-logger';
 import { todos , visibilityFilter} from './reducers';
 
-
+let reduxService = require('./redux');
 angular.module('app', ['ngStorage', reduxService])
   .config(/*@ngInject*/ function(reduxServiceProvider) {
-    reduxServiceProvider.bootstrap(null, [thunk, createLogger()], null);
+    reduxServiceProvider.bootstrap(null, [thunk], null);
   })
   .run(function(reduxService) {
     /*  *   *   *   *   *   *   *   *   *   *   *   *     *
